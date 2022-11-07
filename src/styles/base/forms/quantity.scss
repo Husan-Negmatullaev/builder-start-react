@@ -1,46 +1,40 @@
 //<QUANTITY>
 // Снипет (HTML): qa
 .quantity {
-  width: 88px;
-  height: 40px;
-  display: flex;
-  border: 1px solid rgba(166, 166, 166, 0.45);
+  // width: 88px;
+  // height: 40px;
+
+  &__actions {
+    // border: 1px solid rgba(166, 166, 166, 0.45);
+    display: flex;
+    column-gap: rem(12);
+  }
 
   // .quantity__button
   &__button {
-    flex: 0 0 30px;
+    border: 2px solid #081545;
+    border-radius: 16px;
+    flex: 0 0 rem(56);
+    height: rem(56);
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    font-size: rem(20);
     position: relative;
     cursor: pointer;
 
-    &::before,
-    &::after {
-      content: "";
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transition: all 0.3s ease 0s;
-      margin: 0px 0px 0px -4.5px;
-      background-color: #a6a6a6;
-      width: 9px;
-      height: 1px;
+    @media (max-width:$pc) {
+      flex: 0 0 rem(46);
+      height: rem(46);
     }
 
     @media (any-hover: hover) {
-      &:hover {
-
-        &::before,
-        &::after {
-          background-color: rgba(0, 0, 0, 0.5);
-        }
-      }
+      &:hover {}
     }
 
     // .quantity__button_plus
-    &_plus {
-      &::before {
-        transform: rotate(-90deg);
-      }
-    }
+    &_plus {}
 
     // .quantity__button_minus
     &_minus {}
@@ -48,14 +42,39 @@
 
   // .quantity__input
   &__input {
+    // overflow: hidden;
     flex: 1 1 auto;
+    position: relative;
 
     input {
+      font-family: "Montserrat";
+      font-weight: 600;
+      border-radius: 16px;
+      border: 2px solid #081545;
+      color: #081545;
+      font-size: rem(20);
+      line-height: math.div(26, 20);
       height: 100%;
-      color: #a6a6a6;
-      font-size: 12px;
       width: 100%;
       text-align: center;
     }
+  }
+
+  &__message {
+    color: red;
+    font-size: rem(13);
+    margin-top: rem(8);
+    white-space: nowrap;
+    text-align: center;
+  }
+
+  &__label {
+    color: rgba(11, 41, 79, .5);
+    font-size: rem(12);
+    line-height: math.div(15, 12);
+    margin-bottom: rem(5);
+    text-align: center;
+    width: 100%;
+    display: inline-block;
   }
 }

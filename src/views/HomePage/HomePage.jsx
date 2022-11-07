@@ -47,10 +47,17 @@ const HomePage = () => {
         <div className="container">
           <div className={clsx(styles.accounts__header, "section-header")}>
             <h2 className="section-header__title">Витрина аккаунтов</h2>
-            <p className="section-header__text">Выберите нужный товар и купите его в один клик или через корзину</p>
+            <h4 className="section-header__description">Выберите нужный товар и купите его в один клик или через корзину</h4>
           </div>
           <div className={styles.accounts__content}>
             <div className={styles.accounts__body}>
+              <AccountItem classes={styles.accounts__item} />
+              <AccountItem classes={styles.accounts__item} />
+              <AccountItem classes={styles.accounts__item} />
+              <AccountItem classes={styles.accounts__item} />
+              <AccountItem classes={styles.accounts__item} />
+              <AccountItem classes={styles.accounts__item} />
+              <AccountItem classes={styles.accounts__item} />
               <AccountItem classes={styles.accounts__item} />
             </div>
           </div>

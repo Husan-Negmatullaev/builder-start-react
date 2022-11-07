@@ -15,6 +15,14 @@
   line-height: math.div(28, 26);
   transition: background-color 0.3s ease 0s;
 
+  @media (max-width:$pc) {
+    font-size: rem(20);
+  }
+
+  @media (max-width:$tablet) {
+    font-size: rem(17);
+  }
+
   @media (any-hover: hover) {
     &:hover {
       background-color: #e0c03c;
@@ -23,5 +31,28 @@
 
   &._fw {
     width: 100%;
+  }
+
+  &_blue {
+    background-color: #2265ce;
+    color: #fff;
+
+    @media (any-hover: hover) {
+      &:hover {
+        background-color: #164da4;
+      }
+    }
+  }
+
+  &_min {
+    padding: rem(15) rem(20);
+
+    @media (max-width:$pc) {
+      padding: rem(15) rem(10);
+    }
+
+    @media (max-width:$mobileSmall) {
+      padding: rem(8) rem(3);
+    }
   }
 }

@@ -1,12 +1,11 @@
 @use "sass:math";
-@import "@styles-variables";
 @import "@mixins";
 @import "@icons";
+@import "@styles-variables";
 
 .page__mainBlock {}
 
 .mainBlock {
-  // position: relative;
 
   @include adaptiveValue("margin-top", 55, 20, 1200, 767.98, 1);
   @include adaptiveValue("padding-bottom", 110, 20, 1200, 767.98, 1);
@@ -15,7 +14,9 @@
     padding-bottom: 0;
   }
 
-  &__container {}
+  &__container {
+    position: relative;
+  }
 
   &__body {
     display: grid;
@@ -46,18 +47,17 @@
   }
 
   &__media {
-
     @media (min-width: rem(767.98)) {
       align-self: flex-end;
     }
 
     &::after {
-      content: '';
+      // content: '';
       position: absolute;
-      top: 0;
-      right: -55%;
-      height: 100%;
-      width: 100vw;
+      top: -128%;
+      right: -258%;
+      height: 300%;
+      width: 300%;
       border: 6px solid #56d7ff;
       transform: rotate(-45deg);
       border-radius: 250px;
@@ -175,4 +175,42 @@
       padding: 0px 0px 0px rem(20);
     }
   }
+}
+
+.accounts {
+  background-color: #081545;
+  position: relative;
+  @include adaptiveValue("padding-top", 60, 25);
+  @include adaptiveValue("padding-bottom", 60, 25);
+  z-index: 2;
+
+  &__header {
+    @include adaptiveValue("margin-bottom", 60, 25);
+  }
+
+  &__content {
+    background-color: #fff;
+    border-radius: 55px;
+    box-shadow: 0 0 64px #2265ce;
+    padding: rem(50) rem(70);
+
+    @media (max-width:$mobile) {
+      padding: rem(45) rem(50);
+    }
+
+    @media (max-width:$mobile) {
+      padding: rem(40) rem(40);
+    }
+
+    @media (max-width:$mobileSmall) {
+      padding: rem(35) rem(25);
+    }
+  }
+
+  &__body {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  &__item {}
 }
